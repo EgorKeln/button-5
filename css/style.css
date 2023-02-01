@@ -1,0 +1,135 @@
+*,
+*:before,
+*:after{
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+html,
+body{
+    width: 100%;
+    height: 100%;
+    background-color:  #ffffff;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+.wrapper{
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #333;
+}
+.box {
+  display: flex;
+  height: 120px;
+  width: 220px;
+  border: 3px solid #333;
+  border-radius: 10px;
+  box-shadow: 5px 5px 0.5px rgba(0, 0, 0, 0.3);
+  justify-content: center;
+  align-items: center;
+}
+
+.box .icon {
+  position: relative;
+  background: #ffffff;
+  border: 2px solid #333;
+  border-radius: 50%;
+  padding: 15px;
+  margin: 45px 3px 0px 3px;
+  width: 50px;
+  height: 50px;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: 5px 5px 1px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.box .tooltip {
+  position: absolute;
+  top: 0;
+  font-size: 14px;
+  background: #ffffff;
+  color: #ffffff;
+  padding: 5px 8px;
+  border-radius: 5px;
+  box-shadow: 3px 3px 1px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.fa-github {
+    border-radius: 50%;
+    color: #333;
+    font-size: 36px;
+    width: 51px;
+    height: 51px;
+    padding: 7px 0px 0px 10px;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+.fa-youtube {
+  border-radius: 50%;
+  color: #333;
+  font-size: 35px;
+  width: 51px;
+  height: 51px;
+  padding: 8px 0px 0px 10px;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.fa-paper-plane {
+  border-radius: 50%;
+  color: #333;
+  font-size: 33px;
+  width: 51px;
+  height: 51px;
+  padding: 10px 0px 0px 7px;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+} 
+.box .tooltip::before {
+  position: absolute;
+  content: "";
+  height: 6px;
+  width: 6px;
+  background: #ffffff;
+  bottom: -3px;
+  left: 50%;
+  transform: translate(-50%) rotate(45deg);
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.box .icon:hover .tooltip {
+  top: -45px;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+.box .icon:hover span,
+.box .icon:hover .tooltip {
+  text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.2);
+}
+
+.box .github:hover .fa,
+.box .github:hover .tooltip,
+.box .github:hover .tooltip::before {
+  background: #333333;
+  color: #ffffff; 
+}
+
+
+.box .youtube:hover .fa,
+.box .youtube:hover .tooltip,
+.box .youtube:hover .tooltip::before {
+  background: #cd201f;
+  color: #ffffff;
+}
+
+.box .telegram:hover .fa,
+.box .telegram:hover .tooltip,
+.box .telegram:hover .tooltip::before {
+  background: #0088cc;
+  color: #ffffff;
+}
